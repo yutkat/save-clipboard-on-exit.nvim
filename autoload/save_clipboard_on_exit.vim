@@ -1,4 +1,8 @@
 function! save_clipboard_on_exit#save() abort
+  if !has('clipboard')
+    return
+  endif
+
   if exists('$WAYLAND_DISPLAYD')
     return
   endif
